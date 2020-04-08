@@ -7,17 +7,17 @@ function Player(name) {
     this.totalScore = 0
 }
 
-Game.prototype.updateTurnScore = function (rollNumber, turn) {
-  var id = turn;
-  for (var i = 0; i < this.players.length; i++) {
-    if (this.players[i]) {
-      if (this.players[i].id == id) {
-        return this.players[i];
-      }
-    }
-  };
-  return false
-}
+// Game.prototype.updateTurnScore = function (rollNumber, turn) {
+//   for (var i = 0; i <= this.players.length; i++) {
+//     if (this.players[i]) {
+//       if (this.players[i].id == id) {
+//         return this.players[i].id;
+
+//       }
+//     }
+//   };
+//   return false
+// }
 
 
 //game logic
@@ -40,9 +40,15 @@ Game.prototype.assignId = function () {
 
 Game.prototype.executeTurn = function (roll, turn) {
   var rollNumber = roll;
-  var pTurn = turn;
+  var index = turn - 1;
 
-  this.updateTurnScore(rollNumber, pTurn);
+  this.players[index].turnScore += rollNumber;
+  //alert(this.players[index].turnScore);
+  $("#turnScorePlayer" + turn).text(this.players[index].turnScore);
+
+  //var pTurn = turn;
+
+  //this.updateTurnScore(rollNumber, pTurn);
 
   // if (pTurn === 1) {
   //   game.updateTurnScore(rollNumber, pTurn);
@@ -70,7 +76,12 @@ Game.prototype.roll = function () {
 
 }
 
-Game.prototype.endTurn = function () {
+Game.prototype.endTurn = function (turn) {
+  if (turn === 1) {
+    game.playerTurn = 2;
+  } else {
+    game.playerTurn = 1;
+  }
   //if 1 is not rolled, add turnScore to totalScore
   //if 1 is rolled, don't add  to totalScore
   //if totalscore === 100, execute gameOver
@@ -93,7 +104,7 @@ Game.prototype.gameOver = function () {
 }
 
 
-
+var game = new Game();
 
 // user interface
 $(document).ready(function () {
@@ -104,7 +115,7 @@ $(document).ready(function () {
 
     var pOne = new Player(pOneName);
     var pTwo = new Player(pTwoName);
-    var game = new Game();
+
 
     game.addPlayer(pOne);
     game.addPlayer(pTwo);
@@ -122,11 +133,11 @@ $(document).ready(function () {
       var turn = game.playerTurn;
       game.executeTurn(roll, turn);
 
-
     });
 
     $("#endTurnButton").click(function () {
-      //game.endTurn();
+      var turn = game.playerTurn;
+      game.endTurn(turn);
 
     });
 

@@ -56,7 +56,7 @@ p {
 }
 
 #tagline {
-  float: center;
+  padding-left: 200px;
 }
 
 .tutorial {
