@@ -42,24 +42,17 @@ Game.prototype.executeTurn = function (roll, turn) {
   var rollNumber = roll;
   var index = turn - 1;
 
-  this.players[index].turnScore += rollNumber;
-  //alert(this.players[index].turnScore);
-  $("#turnScorePlayer" + turn).text(this.players[index].turnScore);
 
-  //var pTurn = turn;
-
-  //this.updateTurnScore(rollNumber, pTurn);
-
-  // if (pTurn === 1) {
-  //   game.updateTurnScore(rollNumber, pTurn);
-  //   console.log(update.turnScore);
-  // } else {
-  //   player2.turnScore += rollNumber;
-  //   console.log(player2.turnScore);
-  // }
-
-  //console.log(rollNumber);
   $("#rollDisplay").text(rollNumber);
+
+  if (rollNumber !== 1) {
+    this.players[index].turnScore += rollNumber;
+    //alert(this.players[index].turnScore);
+    $("#turnScorePlayer" + turn).text(this.players[index].turnScore);
+  } else {
+
+  }
+
 
   //return rollNumber;
 
@@ -77,24 +70,34 @@ Game.prototype.roll = function () {
 }
 
 Game.prototype.endTurn = function (turn) {
-  if (turn === 1) {
-    game.playerTurn = 2;
-  } else {
-    game.playerTurn = 1;
-  }
+  var index = turn - 1;
+  var holdPoints = this.players[index].turnScore;
+
+  this.players[index].totalScore += holdPoints;
+
+  $("#totalScorePlayer" + turn).text(this.players[index].totalScore);
+  this.players[index].turnScore = 0;
+  $("#turnScorePlayer" + turn).text(this.players[index].turnScore);
+
+
   //if 1 is not rolled, add turnScore to totalScore
   //if 1 is rolled, don't add  to totalScore
   //if totalscore === 100, execute gameOver
   // else changeTurn
-
+  game.changeTurn(turn);
 }
 
-Game.prototype.changeTurn = function () {
-  // if playerTurn === 1
-  // playerTurn = 2
-  //else
-  // playerTurn = 1
+Game.prototype.changeTurn = function (turn) {
 
+  if (turn === 1) {
+    game.playerTurn = 2;
+
+  } else {
+    game.playerTurn = 1;
+  }
+
+  var index = game.playerTurn - 1;
+  $("#turnDisplay").text(this.players[index].name);
 
 }
 
