@@ -4,8 +4,12 @@
 function Player(name) {
   this.name = name,
     this.turnScore = 0,
-    this.totalScore = 0
+    this.totalScore = 0,
 }
+
+
+
+
 
 
 //game logic
@@ -14,9 +18,49 @@ function Game(player1, player2) {
     this.player2 = player2,
     this.playerTurn = 1,
     this.gameOver = false
+  this.currentId = 0;
 }
 
+Game.prototype.addPlayer = function (player) {
+  player.id = this.assignId();
 
+}
+
+Game.prototype.executeTurn = function () {
+  // var rollNumber = game.roll();
+  // if rollNumber === 1
+  //      game.endTurn
+  // else
+  //      turnScore += rollNumber
+}
+
+Game.prototype.roll = function () {
+  // return a random number, 1-6
+  // 
+
+}
+
+Game.prototype.endTurn = function () {
+  //if 1 is not rolled, add turnScore to totalScore
+  //if 1 is rolled, don't add  to totalScore
+  //if totalscore === 100, execute gameOver
+  // else changeTurn
+
+}
+
+Game.prototype.changeTurn = function () {
+  // if playerTurn === 1
+  // playerTurn = 2
+  //else
+  // playerTurn = 1
+
+
+}
+
+//only when player 1 or player 2 score reaches 100 after endTurn is executed
+Game.prototype.gameOver = function () {
+
+}
 
 
 
@@ -36,16 +80,16 @@ $(document).ready(function () {
     console.log(pOne.name);
     console.log(pTwo.name);
 
-    console.log(game.player1.name, game.player2.name);
+    console.log(game);
 
     $("#rollButton").click(function () {
-
+      //game.executeTurn();
 
 
     });
 
     $("#endTurnButton").click(function () {
-
+      //game.endTurn();
 
     });
 

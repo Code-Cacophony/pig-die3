@@ -5,7 +5,7 @@ body {
 }
 
 #btn {
-  
+  float: center;
 }
 
 .col-xs-4 {
@@ -39,10 +39,14 @@ p {
 }
 
 #player1 {
-  padding-top: 40px;
+  padding-top: 80px;
 }
 
 #ride2 {
+  float: right;
+}
+
+#row2 {
   float: right;
 }
 
