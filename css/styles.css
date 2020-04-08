@@ -1,0 +1,51 @@
+
+
+body {
+  background-color: #FFD7D7;
+}
+
+#btn {
+  
+}
+
+.col-xs-4 {
+  background-color: #FFC3C3; 
+  border: solid 2px;
+}
+
+h3 {
+  padding-left: 460px;
+}
+
+img {
+  width: 200px;
+}
+
+p {
+  font-size: larger;
+}
+
+.panel-head {
+  background-color: #FFC3C3;
+}
+
+.panel-panel-default {
+  background-color: #FFC3C3;
+}
+
+#player1 {
+  padding-top: 80px;
+}
+
+#player2 {
+  float: right;
+}
+
+#ride2 {
+  float: right;
+}
+
+.tutorial {
+  background-color: #FFC3C3;
+  border: solid 2px;
+}

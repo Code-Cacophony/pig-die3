@@ -12,21 +12,91 @@
 <body>
   <div class="container">
     <h1>Pig Die</h1>
+    <img src="https://thumbs.gfycat.com/DeafeningLimpingAsianlion-size_restricted.gif" id="ride1">
+    <img src="https://thumbs.gfycat.com/IllustriousWealthyBluetonguelizard-small.gif" id="ride2">
+    <br>
+    <br>
     <p>Pig Die is a fun dice game that a whole family of two people can enjoy!</p>
-    <h4>How to Play</h4>
-    <ul>
-      <li>The first player rolls the dice. If they land on 1 they get no points and have to end their turn.</li>
-      <li>If the player lands on anything else they can choose to keep rolling or to "hold".</li>
-      <li>If the player keeps rolling, each number they land on is added to their total score until they choose to
-        hold(end their turn) or
-        until they land on 1, in which case their turn ends anyway AND they lose all the points they could have made in
-        that turn.
-      </li>
-      <li>Repeat with player 2.
-      <li>
-      <li>First player to make it to 100 points in their total(or more) wins!</li>
-    </ul>
+    <div class="tutorial">
+      <h3>How to Play</h3>
+      <ul>
+        <li>The first player rolls the dice. If they land on 1 they get no points and have to end their turn.</li>
+        <li>If the player lands on anything else they can choose to keep rolling or to "hold".</li>
+        <li>If the player keeps rolling, each number they land on is added to their total score until they choose to
+          hold(end their turn) or
+          until they land on 1, in which case their turn ends anyway AND they lose all the points they could have made
+          in
+          that turn.
+        </li>
+        <li>Repeat with player 2.
+        <li>
+        <li>First player to make it to 100 points in their total(or more) wins!</li>
+      </ul>
+    </div>
+    <form id="register">
+      <div id="player1">
+        <label for="playerOneName">Player One:</label>
+        <input type="text" id="playerOneName">
+      </div>
+      <br>
+      <div id="player2">
+        <label for="playerOneName">Player Two:</label>
+        <input type="text" id="playerOneName">
+      </div>
+      <br>
+    </form>
+
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="panel-panel-default">
+          <div class="panel-head">
+            <h2 id="playerOneNameDisplay"></h2>
+            <p>Turn Score: <span id="playerOneTurnScore"></span></p>
+            <p>Total Score: <span id="playerOneTotalScore"></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="panel-panel-default">
+          <div class="panel-head">
+            <h2 id="gameStatus">Current Turn</h2>
+
+            <p><span id="turnDisplay"></span>'s Turn</p>
+            <p> Roll = <span id="rollDisplay"></span></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-4">
+        <div class="panel-panel-default">
+          <div class="panel-head">
+            <h2 id="playerTwoNameDisplay"></h2>
+            <p>Turn Score: <span id="playerTwoTurnScore"></span></p>
+            <p>Total Score: <span id="playerOneTotalScore"></span></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 </body>
 
 </html>
+
+
+
+
+
+<!--
+|---------------| |---------------| |---------------| 
+| Player One    | |   Player one's| | Player Two:   |
+| Turn Score:   | |     Turn      | | Turn Score:   |               
+| Total Score:  | |    * * *    6 | | Total Score:  |
+|               | |    * * *      | |               |
+|               | |    * * *      | |               |
+|_______________| |_______________| |_______________|          
+
+
+-->
