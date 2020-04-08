@@ -50,6 +50,8 @@ Game.prototype.executeTurn = function (roll, turn) {
     //alert(this.players[index].turnScore);
     $("#turnScorePlayer" + turn).text(this.players[index].turnScore);
   } else {
+    this.players[index].turnScore = 0;
+    game.endTurn(turn);
 
   }
 
@@ -74,6 +76,13 @@ Game.prototype.endTurn = function (turn) {
   var holdPoints = this.players[index].turnScore;
 
   this.players[index].totalScore += holdPoints;
+
+  if (this.players[index].totalScore >= 100) {
+    alert(this.players[index].name + " is the Winner!");
+    $("#totalScorePlayer" + turn).text(this.players[index].totalScore);
+    window.location.reload();
+
+  }
 
   $("#totalScorePlayer" + turn).text(this.players[index].totalScore);
   this.players[index].turnScore = 0;
