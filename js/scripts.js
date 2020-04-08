@@ -18,12 +18,6 @@ function Game(player1, player2) {
     this.player2 = player2,
     this.playerTurn = 1,
     this.gameOver = false
-  this.currentId = 0;
-}
-
-Game.prototype.addPlayer = function (player) {
-  player.id = this.assignId();
-
 }
 
 Game.prototype.executeTurn = function () {
