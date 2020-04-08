@@ -6,6 +6,15 @@ body {
 
 #btn {
   float: center;
+  padding-left: 457px;
+}
+
+#column1 {
+  float: left;
+}
+
+#column2 {
+  float: right;
 }
 
 .col-xs-4 {
@@ -39,15 +48,15 @@ p {
 }
 
 #player1 {
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 #ride2 {
   float: right;
 }
 
-#row2 {
-  float: right;
+#tagline {
+  float: center;
 }
 
 .tutorial {
@@ -55,6 +64,7 @@ p {
   border: solid 2px;
 }
 
-/* #theHub {
-  display: none;
-} */
+#theHub {
+  /* display: none; */
+  padding-top: 200px;
+} 

@@ -16,7 +16,7 @@
     <img src="https://thumbs.gfycat.com/IllustriousWealthyBluetonguelizard-small.gif" id="ride2">
     <br>
     <br>
-    <p>Pig Die is a fun dice game that a whole family of two people can enjoy!</p>
+    <p id="tagline">Pig Die is a fun dice game that a whole family of two people can enjoy!</p>
     <div class="tutorial">
       <h3>How to Play:</h3>
       <ul>
@@ -28,80 +28,81 @@
           in
           that turn.
         </li>
-        <li>Repeat with player 2.
-        <li>
+        <li>Repeat with player 2.</li>
         <li>First player to make it to 100 points in their total(or more) wins!</li>
       </ul>
     </div>
 
     <form id="register">
-      <div id="column1">
-        <div id="player1">
-          <p>Enter player one's name:</p>
-          <label for="playerOneName">Player One:</label>
-          <input type="text" id="playerOneName">
+      <div class="row">
+        <div id="column1">
+          <div id="player1">
+            <p>Enter player one's name:</p>
+            <label for="playerOneName">Player One:</label>
+            <input type="text" id="playerOneName">
+          </div>
+        </div>
+        <br>
+        <br>
+        <div id="column2">
+          <div id="player2">
+            <p>Enter player two's name:</p>
+            <label for="playerTwoName">Player Two:</label>
+            <input type="text" id="playerTwoName">
+          </div>
+        </div>
+        <br>
+        <div id="btn">
+          <button type="submit">Start</button>
         </div>
       </div>
-  </div>
-  <br>
-  <br>
-  <div id="column2">
-    <div id="player2">
-      <p>Enter player two's name:</p>
-      <label for="playerTwoName">Player Two:</label>
-      <input type="text" id="playerTwoName">
-    </div>
-  </div>
-  <br>
-  <div id="btn">
-    <button type="submit">Start</button>
-  </div>
+    </form>
 
-  </form>
-  <div class="row" id="theHub">
-    <div class="col-xs-4">
-      <div class="panel-panel-default">
-        <div class="panel-head">
-          <h2 id="playerOneNameDisplay"></h2>
-          <div class="panel-body">
-            <p>Turn Score: <span id="playerOneTurnScore"></span></p>
-            <p>Total Score: <span id="playerOneTotalScore"></span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="panel-panel-default">
-        <div class="panel-head">
-          <h2 id="gameStatus">Current Turn</h2>
-          <div class="panel-body">
-            <p><span id="turnDisplay"></span>'s Turn</p>
-            <p> Roll = <span id="rollDisplay"></span></p>
-            <button type="button" id="rollButton">Roll!</button>
-            <button type="button" id="endTurnButton">End Turn!</button>
-          </div>
-        </div>
-      </div>
 
-    </div>
-    <div class="col-xs-4">
-      <div class="panel-panel-default">
-        <div class="panel-head">
-          <h2 id="playerTwoNameDisplay"></h2>
-          <div class="panel-body">
-            <p>Turn Score: <span id="playerTwoTurnScore"></span></p>
-            <p>Total Score: <span id="playerOneTotalScore"></span></p>
+    <div class="row" id="theHub">
+      <div class="col-xs-4">
+        <div class="panel-panel-default">
+          <div class="panel-head">
+            <h2 id="playerOneNameDisplay"></h2>
+            <div class="panel-body">
+              <p>Turn Score: <span id="playerOneTurnScore"></span></p>
+              <p>Total Score: <span id="playerOneTotalScore"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="panel-panel-default">
+          <div class="panel-head">
+            <h2 id="gameStatus">Current Turn</h2>
+            <div class="panel-body">
+              <p><span id="turnDisplay"></span>'s Turn</p>
+              <p> Roll = <span id="rollDisplay"></span></p>
+              <button type="button" id="rollButton">Roll!</button>
+              <button type="button" id="endTurnButton">End Turn!</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-4">
+        <div class="panel-panel-default">
+          <div class="panel-head">
+            <h2 id="playerTwoNameDisplay"></h2>
+            <div class="panel-body">
+              <p>Turn Score: <span id="playerTwoTurnScore"></span></p>
+              <p>Total Score: <span id="playerOneTotalScore"></span></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>&copy; 2004 all rights reserved
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <p>&copy; 2004 all rights reserved
-    </div>
 </body>
 
 </html>
