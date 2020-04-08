@@ -1,4 +1,4 @@
-//business logic
+////////////business logic
 
 //player logic
 function Player(name) {
@@ -8,6 +8,13 @@ function Player(name) {
 }
 
 
+//game logic
+function Game(player1, player2) {
+  this.player1 = player1,
+    this.player2 = player2,
+    this.playerTurn = 1,
+    this.gameOver = false
+}
 
 
 
@@ -24,11 +31,23 @@ $(document).ready(function () {
     var pOne = new Player(pOneName);
     var pTwo = new Player(pTwoName);
 
+    var game = new Game(pOne, pTwo);
+
     console.log(pOne.name);
     console.log(pTwo.name);
 
+    console.log(game.player1.name, game.player2.name);
+
+    $("#rollButton").click(function () {
 
 
+
+    });
+
+    $("#endTurnButton").click(function () {
+
+
+    });
 
   });
 
