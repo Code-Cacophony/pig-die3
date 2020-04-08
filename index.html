@@ -18,7 +18,7 @@
     <br>
     <p>Pig Die is a fun dice game that a whole family of two people can enjoy!</p>
     <div class="tutorial">
-      <h3>How to Play</h3>
+      <h3>How to Play:</h3>
       <ul>
         <li>The first player rolls the dice. If they land on 1 they get no points and have to end their turn.</li>
         <li>If the player lands on anything else they can choose to keep rolling or to "hold".</li>
@@ -33,26 +33,33 @@
         <li>First player to make it to 100 points in their total(or more) wins!</li>
       </ul>
     </div>
-    <form id="register">
-      <div id="player1">
-        <label for="playerOneName">Player One:</label>
-        <input type="text" id="playerOneName">
-      </div>
-      <br>
-      <div id="player2">
-        <label for="playerOneName">Player Two:</label>
-        <input type="text" id="playerOneName">
-      </div>
-      <br>
-    </form>
-
     <div class="row">
+      <form id="register">
+        <div id="player1">
+          <p>Enter player one's name:</p>
+          <label for="playerOneName">Player One:</label>
+          <input type="text" id="playerOneName">
+        </div>
+        <br>
+        <br>
+        <div id="player2">
+          <p>Enter player two's name:</p>
+          <label for="playerOneName">Player Two:</label>
+          <input type="text" id="playerOneName">
+        </div>
+        <br>
+        <button type="submit" id="btn">Start</button>
+      </form>
+    </div>
+    <div class="row" id="theHub">
       <div class="col-xs-4">
         <div class="panel-panel-default">
           <div class="panel-head">
             <h2 id="playerOneNameDisplay"></h2>
-            <p>Turn Score: <span id="playerOneTurnScore"></span></p>
-            <p>Total Score: <span id="playerOneTotalScore"></span></p>
+            <div class="panel-body">
+              <p>Turn Score: <span id="playerOneTurnScore"></span></p>
+              <p>Total Score: <span id="playerOneTotalScore"></span></p>
+            </div>
           </div>
         </div>
       </div>
@@ -60,9 +67,12 @@
         <div class="panel-panel-default">
           <div class="panel-head">
             <h2 id="gameStatus">Current Turn</h2>
-
-            <p><span id="turnDisplay"></span>'s Turn</p>
-            <p> Roll = <span id="rollDisplay"></span></p>
+            <div class="panel-body">
+              <p><span id="turnDisplay"></span>'s Turn</p>
+              <p> Roll = <span id="rollDisplay"></span></p>
+              <button type="button" id="rollButton">Roll!</button>
+              <button type="button" id="endTurnButton">End Turn!</button>
+            </div>
           </div>
         </div>
 
@@ -71,8 +81,10 @@
         <div class="panel-panel-default">
           <div class="panel-head">
             <h2 id="playerTwoNameDisplay"></h2>
-            <p>Turn Score: <span id="playerTwoTurnScore"></span></p>
-            <p>Total Score: <span id="playerOneTotalScore"></span></p>
+            <div class="panel-body">
+              <p>Turn Score: <span id="playerTwoTurnScore"></span></p>
+              <p>Total Score: <span id="playerOneTotalScore"></span></p>
+            </div>
           </div>
         </div>
 

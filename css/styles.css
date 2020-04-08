@@ -14,7 +14,7 @@ body {
 }
 
 h3 {
-  padding-left: 460px;
+  padding-left: 420px;
 }
 
 img {
@@ -34,11 +34,11 @@ p {
 }
 
 #player1 {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 #player2 {
-  float: right;
+ 
 }
 
 #ride2 {
@@ -49,3 +49,7 @@ p {
   background-color: #FFC3C3;
   border: solid 2px;
 }
+
+/* #theHub {
+  display: none;
+} */
