@@ -4,17 +4,20 @@ body {
   background-color: #FFD7D7;
 }
 
-#btn {
-  
-}
+
 
 .col-xs-4 {
   background-color: #FFC3C3; 
   border: solid 2px;
 }
 
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-left: 415px;
+}
+
 h3 {
-  padding-left: 420px;
+  padding-left: 415px;
 }
 
 img {
@@ -34,11 +37,7 @@ p {
 }
 
 #player1 {
-  padding-top: 60px;
-}
-
-#player2 {
- 
+  padding-top: 40px;
 }
 
 #ride2 {
