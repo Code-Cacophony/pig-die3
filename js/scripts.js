@@ -111,6 +111,11 @@ $(document).ready(function () {
     var pOneName = $("#playerOneName").val();
     var pTwoName = $("#playerTwoName").val();
 
+
+    // if play against computer is chosen, pTwoName = computer and computerChosen = true
+    // add computerChosen as a game parameter
+    // if computerChosen === true, then when player turn === 2, game.animateDie game.executeTurn go twice
+
     var pOne = new Player(pOneName);
     var pTwo = new Player(pTwoName);
 
