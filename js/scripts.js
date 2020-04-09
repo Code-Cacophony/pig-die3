@@ -126,7 +126,10 @@ $(document).ready(function () {
     console.log(pTwo.name);
     console.log(game);
 
-    $("#rollButton").click(function () {
+    $("#rollButton").mousedown(function () {
+      $("#dice").html("<p>########</p><p>########</p><p>########</p>");
+    });
+    $("#rollButton").mouseup(function () {
       var roll = game.roll();
       var turn = game.playerTurn;
       game.animateDie(roll);
