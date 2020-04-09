@@ -8,7 +8,7 @@ function Player(name) {
 }
 
 //game logic
-function Game(player1, player2) {
+function Game() {
   this.players = [];
   this.currentId = 0,
     this.playerTurn = 1,
@@ -56,7 +56,7 @@ Game.prototype.executeTurn = function (roll, turn) {
     $("#turnScorePlayer" + turn).text(this.players[index].turnScore);
   } else {
     this.players[index].turnScore = 0;
-    game.endTurn(turn);
+    this.endTurn(turn);
 
   }
 }
@@ -83,17 +83,17 @@ Game.prototype.endTurn = function (turn) {
   this.players[index].turnScore = 0;
   $("#turnScorePlayer" + turn).text(this.players[index].turnScore);
 
-  game.changeTurn(turn);
+  this.changeTurn(turn);
 }
 
 Game.prototype.changeTurn = function (turn) {
 
   if (turn === 1) {
-    game.playerTurn = 2;
+    this.playerTurn = 2;
   } else {
-    game.playerTurn = 1;
+    this.playerTurn = 1;
   }
-  var index = game.playerTurn - 1;
+  var index = this.playerTurn - 1;
   $("#turnDisplay").text(this.players[index].name);
 
 }
@@ -102,7 +102,6 @@ Game.prototype.changeTurn = function (turn) {
 Game.prototype.gameOver = function () {
 
 }
-var game = new Game();
 
 // user interface
 $(document).ready(function () {
@@ -111,13 +110,13 @@ $(document).ready(function () {
     var pOneName = $("#playerOneName").val();
     var pTwoName = $("#playerTwoName").val();
 
-
     // if play against computer is chosen, pTwoName = computer and computerChosen = true
     // add computerChosen as a game parameter
     // if computerChosen === true, then when player turn === 2, game.animateDie game.executeTurn go twice
 
     var pOne = new Player(pOneName);
     var pTwo = new Player(pTwoName);
+    var game = new Game();
 
 
     game.addPlayer(pOne);
