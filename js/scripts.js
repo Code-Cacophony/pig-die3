@@ -38,6 +38,25 @@ Game.prototype.assignId = function () {
   return this.currentId;
 }
 
+Game.prototype.animateDie = function (roll) {
+  var rolNum = roll;
+
+  if (rolNum === 6) {
+    $("#dice").html("<p>*-----------*</p><p>*-----------*</p><p>*-----------*</p>");
+  } else if (rolNum === 5) {
+    $("#dice").html("<p>*-----------*</p><p>------*------</p><p>*-----------*</p>");
+  } else if (rolNum === 4) {
+    $("#dice").html("<p>*-----------*</p><p>-------------</p><p>*-----------*</p>");
+  } else if (rolNum === 3) {
+    $("#dice").html("<p>*------------</p><p>------*------</p><p>------------*</p>");
+  } else if (rolNum === 2) {
+    $("#dice").html("<p>*------------</p><p>-------------</p><p>------------*</p>");
+  } else {
+    $("#dice").html("<p>-------------</p><p>------*------</p><p>-------------</p>");
+  }
+
+}
+
 Game.prototype.executeTurn = function (roll, turn) {
   var rollNumber = roll;
   var index = turn - 1;
@@ -74,7 +93,7 @@ Game.prototype.roll = function () {
 Game.prototype.endTurn = function (turn) {
   var index = turn - 1;
   var holdPoints = this.players[index].turnScore;
-
+  $("#dice").html("");
   this.players[index].totalScore += holdPoints;
 
   if (this.players[index].totalScore >= 100) {
@@ -143,6 +162,7 @@ $(document).ready(function () {
     $("#rollButton").click(function () {
       var roll = game.roll();
       var turn = game.playerTurn;
+      game.animateDie(roll);
       game.executeTurn(roll, turn);
 
     });
