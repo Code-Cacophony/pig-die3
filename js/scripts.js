@@ -7,19 +7,6 @@ function Player(name) {
     this.totalScore = 0
 }
 
-// Game.prototype.updateTurnScore = function (rollNumber, turn) {
-//   for (var i = 0; i <= this.players.length; i++) {
-//     if (this.players[i]) {
-//       if (this.players[i].id == id) {
-//         return this.players[i].id;
-
-//       }
-//     }
-//   };
-//   return false
-// }
-
-
 //game logic
 function Game(player1, player2) {
   this.players = [];
@@ -61,7 +48,6 @@ Game.prototype.executeTurn = function (roll, turn) {
   var rollNumber = roll;
   var index = turn - 1;
 
-
   $("#rollDisplay").text(rollNumber);
 
   if (rollNumber !== 1) {
@@ -73,21 +59,12 @@ Game.prototype.executeTurn = function (roll, turn) {
     game.endTurn(turn);
 
   }
-
-
-  //return rollNumber;
-
-  // if rollNumber === 1
-  //      game.endTurn
-  // else
-  //      turnScore += rollNumber
 }
 
 Game.prototype.roll = function () {
   var number = Math.floor(Math.random() * 6) + 1;
   //console.log(number);
   return number;
-
 }
 
 Game.prototype.endTurn = function (turn) {
@@ -100,18 +77,12 @@ Game.prototype.endTurn = function (turn) {
     alert(this.players[index].name + " is the Winner!");
     $("#totalScorePlayer" + turn).text(this.players[index].totalScore);
     window.location.reload();
-
   }
 
   $("#totalScorePlayer" + turn).text(this.players[index].totalScore);
   this.players[index].turnScore = 0;
   $("#turnScorePlayer" + turn).text(this.players[index].turnScore);
 
-
-  //if 1 is not rolled, add turnScore to totalScore
-  //if 1 is rolled, don't add  to totalScore
-  //if totalscore === 100, execute gameOver
-  // else changeTurn
   game.changeTurn(turn);
 }
 
@@ -119,11 +90,9 @@ Game.prototype.changeTurn = function (turn) {
 
   if (turn === 1) {
     game.playerTurn = 2;
-
   } else {
     game.playerTurn = 1;
   }
-
   var index = game.playerTurn - 1;
   $("#turnDisplay").text(this.players[index].name);
 
@@ -133,8 +102,6 @@ Game.prototype.changeTurn = function (turn) {
 Game.prototype.gameOver = function () {
 
 }
-
-
 var game = new Game();
 
 // user interface
